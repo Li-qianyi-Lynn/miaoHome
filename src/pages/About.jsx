@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowRight, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { cats } from '../data/cats'
 
@@ -10,7 +11,82 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] },
 })
 
+const photos = [
+  { src: '/about/lynn-sunset.jpeg',    alt: 'Lynn at golden hour',               pos: 'object-top'    },
+  { src: '/about/lynn-tulips.jpeg',    alt: 'Lynn in the tulip fields',           pos: 'object-center' },
+  { src: '/about/lynn-seattle.jpg',    alt: 'Lynn at the Seattle waterfront',     pos: 'object-top'    },
+  { src: '/about/lynn-waterfront.jpeg',alt: 'Lynn by the lake at dusk',           pos: 'object-center' },
+  { src: '/about/landlord-cats.jpeg',  alt: 'The two cats I started looking after',pos: 'object-center'},
+  { src: '/about/lynn-snow.jpg',       alt: 'Lynn in the snow',                  pos: 'object-center' },
+  { src: '/about/lynn-ferry.jpg',      alt: 'Lynn on the ferry',                 pos: 'object-top'    },
+]
+
+function Lightbox({ src, alt, onClose }) {
+  useEffect(() => {
+    const fn = (e) => { if (e.key === 'Escape') onClose() }
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', fn)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', fn)
+    }
+  }, [onClose])
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-10"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-ink/75 backdrop-blur-sm" />
+
+      <motion.div
+        initial={{ scale: 0.93, opacity: 0 }}
+        animate={{ scale: 1,    opacity: 1 }}
+        exit={{ scale: 0.93,    opacity: 0 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-10"
+        onClick={e => e.stopPropagation()}
+      >
+        <img
+          src={src}
+          alt={alt}
+          className="block rounded-2xl shadow-2xl object-contain"
+          style={{ maxWidth: 'min(90vw, 900px)', maxHeight: '88vh' }}
+        />
+        <button
+          onClick={onClose}
+          className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-surface shadow-lg flex items-center justify-center hover:bg-surface-2 transition-colors cursor-pointer"
+          aria-label="Close"
+        >
+          <X size={14} className="text-ink" />
+        </button>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+function Photo({ src, alt, pos, className, onClick }) {
+  return (
+    <div
+      className={`${className} overflow-hidden cursor-zoom-in group`}
+      onClick={() => onClick({ src, alt })}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className={`w-full h-full object-cover ${pos} transition-transform duration-500 group-hover:scale-[1.04]`}
+      />
+    </div>
+  )
+}
+
 export default function About() {
+  const [light, setLight] = useState(null)
+
   return (
     <div className="min-h-screen pt-28 pb-24 px-6">
       <div className="max-w-4xl mx-auto">
@@ -20,7 +96,7 @@ export default function About() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="mb-20 border-b border-surface-3 pb-14"
+          className="mb-16 border-b border-surface-3 pb-14"
         >
           <p className="label mb-5">About · 关于我</p>
           <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-ink leading-tight mb-6">
@@ -31,27 +107,36 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Profile + story */}
+        {/* Photo mosaic — full width, 3 rows */}
+        <motion.div {...fadeUp()} className="mb-20">
+
+          {/* Row 1: three tall portraits */}
+          <div className="grid grid-cols-3 gap-2 mb-2">
+            <Photo {...photos[0]} className="aspect-[3/4] rounded-2xl" onClick={setLight} />
+            <Photo {...photos[1]} className="aspect-[3/4] rounded-2xl" onClick={setLight} />
+            <Photo {...photos[2]} className="aspect-[3/4] rounded-2xl" onClick={setLight} />
+          </div>
+
+          {/* Row 2: wide landscape + square */}
+          <div className="grid grid-cols-3 gap-2 mb-2">
+            <Photo {...photos[3]} className="col-span-2 aspect-[2/1] rounded-xl" onClick={setLight} />
+            <Photo {...photos[4]} className="aspect-square rounded-xl"           onClick={setLight} />
+          </div>
+
+          {/* Row 3: square + wide landscape */}
+          <div className="grid grid-cols-3 gap-2">
+            <Photo {...photos[5]} className="aspect-square rounded-xl"           onClick={setLight} />
+            <Photo {...photos[6]} className="col-span-2 aspect-[2/1] rounded-xl" onClick={setLight} />
+          </div>
+
+        </motion.div>
+
+        {/* Bio */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-20">
 
-          {/* Photo placeholder */}
-          <motion.div
-            {...fadeUp()}
-            className="md:col-span-2 aspect-[3/4] bg-surface-2 rounded-2xl overflow-hidden relative"
-          >
-            {/* Replace with: <img src="/about.jpg" alt="Lynn" className="w-full h-full object-cover" /> */}
-            <div className="w-full h-full flex items-center justify-center">
-              <p className="label text-ink-faint text-center px-6">
-                放一张你的照片<br />
-                <span className="normal-case not-italic font-sans text-xs text-ink-faint">public/about.jpg</span>
-              </p>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rose to-rose-dark opacity-60" />
-          </motion.div>
-
-          {/* Bio */}
-          <div className="md:col-span-3">
-            <motion.div {...fadeUp(0.1)}>
+          {/* Name card + stats */}
+          <div className="md:col-span-2">
+            <motion.div {...fadeUp(0.05)}>
               <p className="label text-rose mb-2">Seattle, WA · 东北大学西雅图</p>
               <h2 className="font-serif text-4xl font-semibold text-ink mb-1">Lynn</h2>
               <p className="font-sans text-ink-faint text-sm mb-10">
@@ -59,15 +144,39 @@ export default function About() {
               </p>
             </motion.div>
 
-            <motion.div {...fadeUp(0.15)} className="space-y-6 prose-diary text-ink-muted mb-10">
+            <motion.div {...fadeUp(0.1)} className="grid grid-cols-2 gap-3 mb-10">
+              {[
+                { n: '2+',              l: 'Years in Seattle' },
+                { n: `${cats.length}+`, l: 'Cats over time'   },
+                { n: '730+',            l: 'Nights together'  },
+                { n: 'NEU',             l: 'Seattle Campus'   },
+              ].map(({ n, l }) => (
+                <div key={l} className="p-4 border border-surface-3 rounded-xl text-center">
+                  <p className="font-serif text-2xl font-semibold text-ink">{n}</p>
+                  <p className="label mt-1">{l}</p>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div {...fadeUp(0.15)}>
+              <Link to="/contact" className="btn-primary">
+                Say hello · 打个招呼
+                <ArrowRight size={14} />
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Story */}
+          <div className="md:col-span-3">
+            <motion.div {...fadeUp(0.1)} className="space-y-6 prose-diary text-ink-muted">
 
               {/* Intro */}
               <p>
-                我在东北大学西雅图校区读计算机。平时最喜欢睡觉、vibe coding，还有吸猫。
-                世界上不能没有猫猫——这是我坚定不移的信念。
+                Hello 朋友们，这里是Lynn，欢迎来到我的喵喵之家。我在东北大学西雅图校区读计算机。平时最喜欢睡觉、vibe coding，还有吸猫。
+                <strong className="text-ink">世界上不能没有猫猫，</strong>这是我坚定不移的信念。
               </p>
               <p className="font-sans text-sm text-ink-faint italic">
-                I study CS at Northeastern University Seattle. I like sleeping, vibe coding, and cats.
+                Hi, I'm Lynn. I study CS at Northeastern University Seattle. I like sleeping, vibe coding, and cats.
                 The world would be worse without cats. This is not up for debate.
               </p>
 
@@ -103,7 +212,7 @@ export default function About() {
 
               {/* 重新开始 */}
               <p>
-                2024年，我搬来了西雅图。房东养了两只猫——一只小狸花，一只小白猫。
+                2024年，我搬来了西雅图。房东养了两只猫——一只小狸花（高高），一只小白猫（西西）。
                 他出差或出去玩的时候，我就顺手帮忙照顾。
                 没想太多，就是顺手的事。
               </p>
@@ -112,7 +221,7 @@ export default function About() {
                 就是弟弟。我反复思考，鼓足勇气，答应了。
               </p>
               <p>
-                就是从那时候开始，我和猫猫们的故事，重新步入正轨。
+                就是从那时候开始，我和猫猫们的故事，<strong className="text-ink">重新步入正轨</strong>。
               </p>
               <p className="font-sans text-sm text-ink-faint italic">
                 In 2024, I moved to Seattle. My landlord had two cats — a tabby and a white one.
@@ -121,28 +230,6 @@ export default function About() {
                 said yes, and that was the beginning of everything getting better.
               </p>
 
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div {...fadeUp(0.2)} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
-              {[
-                { n: '2+',              l: 'Years in Seattle' },
-                { n: `${cats.length}+`, l: 'Cats over time'   },
-                { n: '100+',            l: 'Nights together'  },
-                { n: 'NEU',             l: 'Seattle Campus'   },
-              ].map(({ n, l }) => (
-                <div key={l} className="p-4 border border-surface-3 rounded-xl text-center">
-                  <p className="font-serif text-2xl font-semibold text-ink">{n}</p>
-                  <p className="label mt-1">{l}</p>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.div {...fadeUp(0.25)}>
-              <Link to="/contact" className="btn-primary">
-                Say hello · 打个招呼
-                <ArrowRight size={14} />
-              </Link>
             </motion.div>
           </div>
         </div>
@@ -173,6 +260,11 @@ export default function About() {
         </motion.div>
 
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {light && <Lightbox src={light.src} alt={light.alt} onClose={() => setLight(null)} />}
+      </AnimatePresence>
     </div>
   )
 }

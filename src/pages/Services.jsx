@@ -89,7 +89,7 @@ export default function Services() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
 
                 {/* Left: title + desc */}
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-3">
                   <p className="label text-rose mb-3">{m.num}</p>
                   <h3 className="font-serif text-2xl font-semibold text-ink mb-0.5">{m.title}</h3>
                   <p className="font-sans text-xs text-ink-faint tracking-wider mb-5">{m.titleEn}</p>
@@ -98,7 +98,7 @@ export default function Services() {
                 </div>
 
                 {/* Right: includes */}
-                <div className="lg:col-span-3 flex items-start">
+                <div className="lg:col-span-2 flex items-start">
                   <ul className="flex flex-col gap-2.5 w-full">
                     {m.includes.map(item => (
                       <li key={item} className="flex items-start gap-3">

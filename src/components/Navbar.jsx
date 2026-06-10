@@ -35,7 +35,8 @@ export default function Navbar() {
           : 'bg-surface/70 backdrop-blur-sm border-b border-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="px-6">
+      <div className="max-w-6xl mx-auto h-16 flex items-center justify-between">
 
         {/* Wordmark */}
         <Link to="/" className="cursor-pointer">
@@ -80,6 +81,7 @@ export default function Navbar() {
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>
+      </div>
       </div>
 
       {/* Mobile drawer */}

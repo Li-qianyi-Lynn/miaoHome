@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Mail, MapPin, ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, Mail, MapPin, MessageCircle } from 'lucide-react'
+import { useState } from 'react'
 
 const inputCls =
   'w-full px-4 py-3 bg-surface-2 border border-surface-3 rounded-xl font-sans text-sm text-ink ' +
@@ -48,9 +48,9 @@ export default function Contact() {
             <div>
               <p className="label mb-5">Get in touch · 联系方式</p>
               {[
-                { icon: <MessageCircle size={15} />, label: 'WeChat · 微信',    val: 'miaofriends_cat' },
-                { icon: <Mail size={15} />,           label: 'Email',           val: 'hello@miaofriends.com' },
-                { icon: <MapPin size={15} />,          label: 'Location · 地点', val: 'Seattle, WA' },
+                { icon: <MessageCircle size={15} />, label: 'WeChat · 微信',    val: 'Lynnqy77' },
+                { icon: <Mail size={15} />,           label: 'Email',           val: 'lynnliqianyi1215@gmail.com' },
+                { icon: <MapPin size={15} />,          label: 'Location · 地点', val: 'Seattle, WA, USA' },
               ].map(({ icon, label, val }) => (
                 <div key={label} className="flex items-start gap-3 py-4 border-b border-surface-3 last:border-0">
                   <span className="mt-0.5 text-rose flex-shrink-0">{icon}</span>

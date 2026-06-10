@@ -61,7 +61,7 @@ export default function CatDetail() {
             transition={{ duration: 0.65, delay: 0.1 }}
           >
             <p className="label mb-4" style={{ color: cat.accent }}>
-              {cat.breedZh} · {cat.breed} · {cat.ageZh} / {cat.age}
+              {cat.breedZh} · {cat.breed}{cat.ageZh ? ` · ${cat.ageZh}` : ''}
             </p>
 
             <h1 className="font-serif text-5xl font-semibold text-ink leading-tight mb-1">
@@ -88,7 +88,7 @@ export default function CatDetail() {
             <div className="grid grid-cols-2 gap-3 mb-8">
               {[
                 { l: 'Gender · 性别', v: `${cat.genderZh} / ${cat.gender}` },
-                { l: 'Age · 年龄',    v: `${cat.ageZh} / ${cat.age}` },
+                { l: 'Age · 年龄',    v: cat.ageZh ? `${cat.ageZh} / ${cat.age}` : '—' },
                 { l: 'Breed · 品种',  v: `${cat.breedZh}` },
               ].map(({ l, v }) => (
                 <div key={l} className="p-3 bg-surface-2 rounded-xl">
