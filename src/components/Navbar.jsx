@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { to: '/',         label: '首页'   },
-  { to: '/cats',     label: '猫咪们' },
-  { to: '/services', label: '寄养'   },
-  { to: '/about',    label: '关于'   },
-  { to: '/contact',  label: '联系'   },
+  { to: '/',         label: '首页',   labelEn: 'Home'     },
+  { to: '/cats',     label: '猫咪们', labelEn: 'Cats'     },
+  { to: '/services', label: '寄养',   labelEn: 'Services' },
+  { to: '/about',    label: '关于',   labelEn: 'About'    },
+  { to: '/contact',  label: '联系',   labelEn: 'Contact'  },
 ]
 
 export default function Navbar() {
@@ -50,7 +50,7 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-          {links.map(({ to, label }) => {
+          {links.map(({ to, label, labelEn }) => {
             const active = pathname === to
             return (
               <Link
@@ -60,7 +60,7 @@ export default function Navbar() {
                   active ? 'text-ink' : 'text-ink-muted hover:text-ink'
                 }`}
               >
-                {label}
+                {labelEn}
                 {active && (
                   <motion.span
                     layoutId="underline"
@@ -95,15 +95,16 @@ export default function Navbar() {
             className="md:hidden bg-surface/98 backdrop-blur-md border-b border-surface-3"
           >
             <div className="px-6 py-5 flex flex-col gap-1">
-              {links.map(({ to, label }) => (
+              {links.map(({ to, label, labelEn }) => (
                 <Link
                   key={to}
                   to={to}
-                  className={`py-3 font-sans text-sm border-b border-surface-3 last:border-0 cursor-pointer transition-colors ${
+                  className={`py-3 flex items-baseline gap-2 border-b border-surface-3 last:border-0 cursor-pointer transition-colors ${
                     pathname === to ? 'text-ink font-medium' : 'text-ink-muted hover:text-ink'
                   }`}
                 >
-                  {label}
+                  <span className="font-sans text-sm">{label}</span>
+                  <span className="font-sans text-xs opacity-50">{labelEn}</span>
                 </Link>
               ))}
             </div>

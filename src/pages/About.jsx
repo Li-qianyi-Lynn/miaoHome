@@ -16,7 +16,7 @@ const photos = [
   { src: '/about/lynn-tulips.jpeg',    alt: 'Lynn in the tulip fields',           pos: 'object-center' },
   { src: '/about/lynn-seattle.jpg',    alt: 'Lynn at the Seattle waterfront',     pos: 'object-top'    },
   { src: '/about/lynn-waterfront.jpeg',alt: 'Lynn by the lake at dusk',           pos: 'object-center' },
-  { src: '/about/landlord-cats.jpeg',  alt: 'The two cats I started looking after',pos: 'object-center'},
+  { src: '/about/landlord-cat.jpeg',  alt: 'The first cat i cared: didi',pos: 'object-center'},
   { src: '/about/lynn-snow.jpg',       alt: 'Lynn in the snow',                  pos: 'object-center' },
   { src: '/about/lynn-ferry.jpg',      alt: 'Lynn on the ferry',                 pos: 'object-top'    },
 ]
@@ -173,10 +173,8 @@ export default function About() {
           {/* Story */}
           <div className="md:col-span-3">
             <motion.div {...fadeUp(0.1)} className="space-y-6 prose-diary text-ink-muted">
-
-              {/* Intro */}
               <p>
-                Hello 朋友们，这里是Lynn。本科毕业后，我在英国爱丁堡大学读了心理咨询方向的硕士，毕业后做了一年多的心理咨询师。后来机缘巧合，来到了西雅图，在东北大学（NEU）开始学习计算机。
+                Hello 朋友们，这里是Lynn，目前住在Bel-Red。本科毕业后，我在英国爱丁堡大学读了心理咨询方向的硕士，并且做过一年多的心理咨询师。后来机缘巧合，来到了西雅图，在东北大学（NEU）开始学习计算机。
               </p>
               <p>
                 我很好奇，人是怎么运作的，又需要什么。我想探索这个问题——<strong className="text-ink">人和技术之间，究竟可以有怎样的关系。</strong>
@@ -189,60 +187,85 @@ export default function About() {
                 <br /><br />
                 Two paths that look different on paper — but both are really asking the same question: how do people work, and what do they need? Now I'm exploring that through the lens of human–computer interaction. And also: the world would be worse without cats. This is not up for debate.
               </p>
-
-              {/* 罐罐的故事 */}
-              <div className="border-l-2 border-rose/30 pl-5 space-y-3">
-                <p>
-                  但我和猫猫的故事，有一个不太好的开头。
-                </p>
-                <p>
-                  2023年，我还在国内做心理咨询师。有一天我捡到了一只刚出生大概十天的小猫——他很小，
-                  全身大部分是白的，头顶有一点黑。我希望他这辈子有数不清的罐头可以吃，就给他取名叫
-                  <strong className="text-ink">罐罐</strong>。
-                </p>
-                <p>
-                  捡到他的第二天我就带他去体检，医生说他健康，活蹦乱跳。罐罐陪了我整整一周。
-                  一周后的某个早晨，他突然不吃不喝，开始抽搐。
-                  我送他到医院的时候，他已经晚了。
-                </p>
-                <p className="font-sans text-xs text-ink-faint italic">
-                  In 2023, I found a kitten that was maybe ten days old — mostly white, a little black on his head.
-                  I named him Guanguan, because I wanted him to have endless canned food in his life.
-                  The vet said he was healthy. A week later, he was gone.
-                </p>
-              </div>
-
-              {/* 恢复 */}
-              <p>
-                那之后，我有很长一段时间不敢靠近猫咪。我总觉得是自己没做好。
-              </p>
-              <p className="font-sans text-sm text-ink-faint italic">
-                After that, I stayed away from cats for a long time. I kept thinking it was my fault.
-              </p>
-
-              {/* 重新开始 */}
-              <p>
-                2024年，我搬来了西雅图。房东养了两只猫——一只小狸花（高高），一只小白猫（西西）。
-                他出差或出去玩的时候，我就顺手帮忙照顾。
-                没想太多，就是顺手的事。
-              </p>
-              <p>
-                后来又有朋友问我：他们要回国一个月，能不能住到他们家帮忙看猫？
-                就是弟弟。我反复思考，鼓足勇气，答应了。
-              </p>
-              <p>
-                就是从那时候开始，我和猫猫们的故事，<strong className="text-ink">重新步入正轨</strong>。
-              </p>
-              <p className="font-sans text-sm text-ink-faint italic">
-                In 2024, I moved to Seattle. My landlord had two cats — a tabby and a white one.
-                I started looking after them when he travelled. Then a friend asked if I could house-sit
-                for a month while they went back to China. That was Didi. I thought about it for a while,
-                said yes, and that was the beginning of everything getting better.
-              </p>
-
             </motion.div>
           </div>
         </div>
+
+        {/* ── 罐罐的故事：文字左，图片右 ── */}
+        <motion.div {...fadeUp()} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20 pt-4">
+
+          {/* 文字 */}
+          <div className="space-y-4 prose-diary text-ink-muted">
+            <div className="border-l-2 border-rose/30 pl-5 space-y-4">
+              <p>但我和猫猫的故事，有一个不太好的开头。</p>
+              <p>
+                2023年，我还在国内做心理咨询师。有一天我捡到了一只刚出生大概十天的小猫——她很小，
+                全身大部分是白的，头顶有两点黑。我希望她这辈子有数不清的罐头可以吃，就给她取名叫
+                <strong className="text-ink">罐罐</strong>。
+              </p>
+              <p>
+                捡到她的第二天我就带他去体检，医生说她很健康，活蹦乱跳。罐罐陪了我整整一周。
+                一周后的某个早晨，她突然不吃不喝，开始抽搐。
+                我送她到医院的时候，已经晚了。
+              </p>
+              <p className="font-sans text-xs text-ink-faint italic">
+                In 2023, I found a kitten that was maybe ten days old — mostly white, a little black on her head.
+                I named her Guanguan, because I wanted her to have endless canned food in her life.
+                The vet said she was healthy. A week later, she was gone.
+              </p>
+            </div>
+            <p>那之后，我有很长一段时间不敢靠近猫咪。我总觉得是自己没做好。</p>
+            <p className="font-sans text-sm text-ink-faint italic">
+              After that, I stayed away from cats for a long time. I kept thinking it was my fault.
+            </p>
+          </div>
+
+          {/* 图片 */}
+          <div className="aspect-square rounded-2xl overflow-hidden">
+            <img
+              src="/about/guanguan.jpeg"
+              alt="罐罐——那只陪了我一周的小猫"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+        </motion.div>
+
+        {/* ── 重新开始：图片左，文字右 ── */}
+        <motion.div {...fadeUp()} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+
+          {/* 图片 — 手机端在文字上方 */}
+          <div className="aspect-[3/4] rounded-2xl overflow-hidden order-first">
+            <img
+              src="/about/gaogaoxixi.jpeg"
+              alt="高高和西西——让我重新开始照顾猫咪的两只猫"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+
+          {/* 文字 */}
+          <div className="space-y-4 prose-diary text-ink-muted">
+            <p>
+              2024年，我搬来了西雅图。房东养了两只猫——一只小狸花（高高），一只小白猫（西西）。
+              他出差或出去玩的时候，我就顺手帮忙照顾。
+              没想太多，就是顺手的事。
+            </p>
+            <p>
+              后来又有朋友问我：他们要回国一个月，能不能住到他们家帮忙看猫？
+              （就是弟弟喵）我反复思考，鼓足勇气，答应了。
+            </p>
+            <p>
+              就是从那时候开始，我和猫猫们的故事，<strong className="text-ink">重新步入正轨</strong>。
+            </p>
+            <p className="font-sans text-sm text-ink-faint italic">
+              In 2024, I moved to Seattle. My landlord had two cats — a tabby and a white one.
+              I started looking after them when he travelled. Then a friend asked if I could house-sit
+              for a month while they went back to China. That was Didi. I said yes,
+              and that was the beginning of everything getting better.
+            </p>
+          </div>
+
+        </motion.div>
 
         {/* 关于接猫 */}
         <motion.div
