@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, X } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { cats } from '../data/cats'
 
@@ -144,16 +144,16 @@ export default function About() {
               <p className="label text-rose mb-2">Seattle, WA · 东北大学西雅图</p>
               <h2 className="font-serif text-4xl font-semibold text-ink mb-1">Lynn</h2>
               <p className="font-sans text-ink-faint text-sm mb-10">
-                CS student · 睡觉 · vibe coding · 吸猫
+                Edinburgh MSc → NEU CS · 前心理咨询师 · 吸猫
               </p>
             </motion.div>
 
             <motion.div {...fadeUp(0.1)} className="grid grid-cols-2 gap-3 mb-10">
               {[
-                { n: '2+',              l: 'Years in Seattle' },
-                { n: `${cats.length}+`, l: 'Cats over time'   },
-                { n: '730+',            l: 'Nights together'  },
-                { n: 'NEU',             l: 'Seattle Campus'   },
+                { n: 'EDI',             l: 'Univ. of Edinburgh' },
+                { n: 'NEU',             l: 'Northeastern Univ.' },
+                { n: `${cats.length}+`, l: 'Cats over time'     },
+                { n: '730+',            l: 'Nights together'    },
               ].map(({ n, l }) => (
                 <div key={l} className="p-4 border border-surface-3 rounded-xl text-center">
                   <p className="font-serif text-2xl font-semibold text-ink">{n}</p>
@@ -176,12 +176,18 @@ export default function About() {
 
               {/* Intro */}
               <p>
-                Hello 朋友们，这里是Lynn，欢迎来到我的喵喵之家。我在东北大学西雅图校区读计算机。平时最喜欢睡觉、vibe coding，还有吸猫。
-                <strong className="text-ink">世界上不能没有猫猫，</strong>这是我坚定不移的信念。
+                Hello 朋友们，这里是Lynn。本科毕业后，我在英国爱丁堡大学读了心理咨询方向的硕士，毕业后做了一年多的心理咨询师。后来机缘巧合，来到了西雅图，在东北大学（NEU）开始学习计算机。
+              </p>
+              <p>
+                我很好奇，人是怎么运作的，又需要什么。我想探索这个问题——<strong className="text-ink">人和技术之间，究竟可以有怎样的关系。</strong>
+              </p>
+              <p>
+                我平时最喜欢睡觉、vibe coding，还有吸猫。<strong className="text-ink">世界上不能没有猫猫，</strong>这是我坚定不移的信念。
               </p>
               <p className="font-sans text-sm text-ink-faint italic">
-                Hi, I'm Lynn. I study CS at Northeastern University Seattle. I like sleeping, vibe coding, and cats.
-                The world would be worse without cats. This is not up for debate.
+                Hi, I'm Lynn. After my undergrad, I did a master's in psychological counselling at the University of Edinburgh, then worked as a counsellor for over a year. Eventually I found my way to Seattle and started studying computer science at Northeastern University.
+                <br /><br />
+                Two paths that look different on paper — but both are really asking the same question: how do people work, and what do they need? Now I'm exploring that through the lens of human–computer interaction. And also: the world would be worse without cats. This is not up for debate.
               </p>
 
               {/* 罐罐的故事 */}

@@ -36,7 +36,7 @@ export default function CatDetail() {
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="aspect-[3/4] rounded-2xl overflow-hidden bg-surface-2 sticky top-24"
+            className="aspect-[4/3] md:aspect-[3/4] rounded-2xl overflow-hidden bg-surface-2 md:sticky md:top-24"
           >
             {cat.photo ? (
               <img src={cat.photo} alt={`${cat.name}（${cat.nameEn}）的照片`} className="w-full h-full object-cover" />
