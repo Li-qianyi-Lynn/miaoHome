@@ -5,10 +5,10 @@ import { ArrowUpRight } from 'lucide-react'
 export default function CatCard({ cat, index = 0 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-48px' }}
-      transition={{ duration: 0.6, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: '0px' }}
+      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
     >
       <Link to={`/cats/${cat.nameEn.toLowerCase().replace(/\s+/g, '-')}`} className="group block cursor-pointer">
         {/* Photo / placeholder */}
@@ -18,7 +18,7 @@ export default function CatCard({ cat, index = 0 }) {
               src={cat.photo}
               alt={`${cat.name} — ${cat.nameEn}`}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
+              loading="eager"
             />
           ) : (
             <div
