@@ -75,10 +75,11 @@ export default function Hero() {
           <motion.div {...fadeIn(1.3, 0.8)} className="flex flex-wrap gap-3 mb-16">
             <Link to="/cats" className="btn-primary">
               Meet the cats
-              <ArrowRight size={15} />
+              <ArrowRight size={15} aria-hidden="true" />
             </Link>
             <Link
               to="/about"
+              aria-label="Read the full story"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-ink-muted hover:text-ink
                          font-sans text-sm transition-colors duration-200 cursor-pointer"
             >
@@ -121,6 +122,7 @@ export default function Hero() {
 
       {/* ── Scroll cue ── */}
       <motion.div
+        aria-hidden="true"
         className="absolute bottom-8 left-8 z-10 flex items-center gap-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

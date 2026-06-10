@@ -79,7 +79,7 @@ export default function Navbar() {
           className="md:hidden w-9 h-9 flex items-center justify-center text-ink-muted hover:text-ink transition-colors cursor-pointer"
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
+          {open ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
         </button>
       </div>
       </div>

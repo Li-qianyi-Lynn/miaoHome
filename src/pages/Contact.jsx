@@ -63,9 +63,9 @@ export default function Contact() {
             <div>
               <p className="label mb-5">Get in touch · 联系方式</p>
               {[
-                { icon: <MessageCircle size={15} />, label: 'WeChat · 微信',    val: 'Lynnqy77' },
-                { icon: <Mail size={15} />,           label: 'Email',           val: 'lynnliqianyi1215@gmail.com' },
-                { icon: <MapPin size={15} />,          label: 'Location · 地点', val: 'Seattle, WA, USA' },
+                { icon: <MessageCircle size={15} aria-hidden="true" />, label: 'WeChat · 微信',    val: 'Lynnqy77' },
+                { icon: <Mail size={15} aria-hidden="true" />,           label: 'Email',           val: 'lynnliqianyi1215@gmail.com' },
+                { icon: <MapPin size={15} aria-hidden="true" />,          label: 'Location · 地点', val: 'Seattle, WA, USA' },
               ].map(({ icon, label, val }) => (
                 <div key={label} className="flex items-start gap-3 py-4 border-b border-surface-3 last:border-0">
                   <span className="mt-0.5 text-rose flex-shrink-0">{icon}</span>
@@ -99,7 +99,7 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="min-h-[480px] flex flex-col items-center justify-center text-center border border-surface-3 rounded-2xl p-12"
               >
-                <div className="w-14 h-14 rounded-full bg-rose/10 flex items-center justify-center mb-6">
+                <div aria-hidden="true" className="w-14 h-14 rounded-full bg-rose/10 flex items-center justify-center mb-6">
                   <Check size={24} className="text-rose" />
                 </div>
                 <p className="label text-rose mb-2">Received · 已收到</p>
@@ -164,7 +164,7 @@ export default function Contact() {
 
                 <button type="submit" disabled={loading} className="btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed">
                   {loading ? '发送中…' : 'Send · 发送'}
-                  {!loading && <ArrowRight size={14} />}
+                  {!loading && <ArrowRight size={14} aria-hidden="true" />}
                 </button>
                 {error && (
                   <p className="font-sans text-xs text-center text-rose">

@@ -102,7 +102,7 @@ export default function Services() {
                   <ul className="flex flex-col gap-2.5 w-full">
                     {m.includes.map(item => (
                       <li key={item} className="flex items-start gap-3">
-                        <Check size={13} className="mt-0.5 flex-shrink-0 text-rose" />
+                        <Check size={13} aria-hidden="true" className="mt-0.5 flex-shrink-0 text-rose" />
                         <span className="font-sans text-sm text-ink-muted leading-snug">{item}</span>
                       </li>
                     ))}
@@ -147,7 +147,7 @@ export default function Services() {
             </div>
             <Link to="/contact" className="btn-primary self-start text-sm">
               Get in touch · 联系我
-              <ArrowRight size={14} />
+              <ArrowRight size={14} aria-hidden="true" />
             </Link>
           </div>
         </motion.div>

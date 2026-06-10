@@ -72,8 +72,12 @@ function Lightbox({ src, alt, onClose }) {
 function Photo({ src, alt, pos, className, onClick }) {
   return (
     <div
+      role="button"
+      tabIndex={0}
+      aria-label={`查看大图：${alt}`}
       className={`${className} overflow-hidden cursor-zoom-in group`}
       onClick={() => onClick({ src, alt })}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick({ src, alt }) } }}
     >
       <img
         src={src}

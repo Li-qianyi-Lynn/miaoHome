@@ -22,22 +22,21 @@ export default function CatCard({ cat, index = 0 }) {
             />
           ) : (
             <div
+              role="img"
+              aria-label={`${cat.name} — 照片即将上传`}
               className="w-full h-full flex flex-col items-center justify-center gap-3 transition-transform duration-500 group-hover:scale-105"
               style={{ background: `linear-gradient(145deg, ${cat.accent}22, ${cat.accent}44)` }}
             >
-              <span
-                className="font-serif text-5xl font-semibold"
-                style={{ color: cat.accent }}
-              >
+              <span aria-hidden="true" className="font-serif text-5xl font-semibold" style={{ color: cat.accent }}>
                 {cat.name.charAt(0)}
               </span>
-              <span className="font-sans text-xs text-ink-faint tracking-widest uppercase">Photo coming</span>
+              <span aria-hidden="true" className="font-sans text-xs text-ink-faint tracking-widest uppercase">Photo coming</span>
             </div>
           )}
 
           {/* Hover overlay with arrow */}
-          <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-300 rounded-xl sm:rounded-2xl" />
-          <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/0 group-hover:bg-white flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
+          <div aria-hidden="true" className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-300 rounded-xl sm:rounded-2xl" />
+          <div aria-hidden="true" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/0 group-hover:bg-white flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
             <ArrowUpRight size={14} className="text-ink" />
           </div>
 

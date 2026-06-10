@@ -49,7 +49,7 @@ export default function Home() {
           <motion.div {...fadeUp(0.3)} className="mt-10 flex gap-4">
             <Link to="/about" className="btn-primary">
               Read the full story
-              <ArrowRight size={15} />
+              <ArrowRight size={15} aria-hidden="true" />
             </Link>
             <Link to="/cats" className="btn-ghost">
               Meet the cats
@@ -76,7 +76,7 @@ export default function Home() {
             <motion.div {...fadeUp(0.1)}>
               <Link to="/cats" className="btn-ghost text-sm">
                 View all · 查看全部
-                <ArrowRight size={14} />
+                <ArrowRight size={14} aria-hidden="true" />
               </Link>
             </motion.div>
           </div>
@@ -132,7 +132,7 @@ export default function Home() {
                 {cta && (
                   <Link to="/contact" className="btn-primary text-sm">
                     Get in touch · 联系我
-                    <ArrowRight size={14} />
+                    <ArrowRight size={14} aria-hidden="true" />
                   </Link>
                 )}
               </div>
