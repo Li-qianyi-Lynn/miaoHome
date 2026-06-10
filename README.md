@@ -67,7 +67,7 @@ Edit `src/data/cats.js` and add an entry at the end of the `cats` array:
 
 ```js
 {
-  id: 10,                          // next sequential id
+  id: name,                          // next sequential id
   name: '猫咪名',   nameEn: 'Name',
   age: '2 yrs',     ageZh: '2岁',  // use null if unknown
   gender: 'Female', genderZh: '女生',

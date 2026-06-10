@@ -1,22 +1,22 @@
 export const cats = [
   {
-    id: 1,
+    id: didi,
     name: '弟弟',    nameEn: 'Didi',
     age: '3 yrs',   ageZh: '3岁',
     gender: 'Male',   genderZh: '男生',
     breed: 'Tuxedo', breedZh: '奶牛猫',
     personality:   ['敏捷', '亲人', '爱拍屁屁'],
     personalityEn: ['Agile', 'Affectionate', 'Butt-pat enthusiast'],
-    description:   '弟弟是一只奶牛猫，身手敏捷，据说在家会捉兔子。但他同时又非常亲人，最喜欢让人拍他的屁屁，拍了还想继续拍。',
-    descriptionEn: 'Didi is a tuxedo cat with serious hunting instincts — he\'s been known to catch rabbits. Off-duty, he\'s completely affectionate and deeply committed to getting his butt patted.',
-    story:         '弟弟第一次找我拍屁屁的时候，我还没反应过来。他就那么走过来，把屁股对准我的手，然后等着。我拍了一下，他屁股就翘起来一点，意思很明显：再来。',
-    storyEn:       'The first time Didi wanted his butt patted, he walked over, turned around, and just waited. I gave it a pat. His little butt lifted — the universal sign for "again."',
+    description:   '弟弟是一只奶牛猫，绝世好猫，有白手套，喜欢和人贴贴但不给抱。从shelter被领养回家，长大后有很长一段时间可以自由出门——到饭点自己回家吃饭，拉撒都在野外解决，帮爸爸妈妈省了好大一笔猫砂钱。后来搬到新小区，附近有熊和狼出没，为了喵身安全才不让出门了。弟弟非常亲人，最喜欢让人拍他的屁屁，轻轻拍一下就会撅起来，多拍几下直接躺倒。',
+    descriptionEn: 'Didi is a tuxedo cat — white gloves and all — adopted from a shelter as a tiny kitten. For years he had full outdoor privileges: came home for meals on schedule, handled all bathroom business outside, and saved his parents a small fortune in litter. After moving to a new neighborhood with bear and wolf sightings, he was finally grounded for his own safety. Deeply affectionate and always up for snuggling (no picking up, though). His specialty: one butt pat makes him lift, a few more and he melts flat on the floor.',
+    story:         '有一天晚上弟弟悄悄爬上了我的床。我睡得迷迷糊糊，感觉被子被什么压住了，就使劲扯，还顺便踢了一脚。忽然听到咚的一声——什么重物掉进了垃圾桶里。我连忙坐起来打开灯，只见弟弟蹲在地上，用那双哀怨的眼睛看着我。我爆笑。',
+    storyEn:       'One night Didi crept onto my bed while I was asleep. Half-conscious, I felt something weighing down the blanket — so I yanked it hard and kicked. A heavy thud. Something had landed in the trash can. I bolted upright and turned on the light. Didi was sitting on the floor, staring at me with an expression of pure, wounded betrayal. I burst out laughing.',
     photo: '/cats/didi.jpg',
     accent: '#C8A8B0',
-    tags: ['奶牛猫', '猎手', 'Butt Pats'],
+    tags: ['奶牛猫', '白手套', 'Butt Pats'],
   },
   {
-    id: 2,
+    id: sugar,
     name: '鼻嘎',    nameEn: 'Sugar',
     age: '1 yr',    ageZh: '1岁',
     gender: 'Male',   genderZh: '男生',
@@ -32,7 +32,7 @@ export const cats = [
     tags: ['Devon Rex', '小恶霸', 'Energetic'],
   },
   {
-    id: 3,
+    id: sweet-potato,
     name: '地瓜',    nameEn: 'Sweet Potato',
     age: '16 yrs',  ageZh: '16岁',
     gender: 'Female', genderZh: '女生',
@@ -48,7 +48,7 @@ export const cats = [
     tags: ['Senior', '温柔老太太', 'Gentle'],
   },
   {
-    id: 4,
+    id: red-bean,
     name: '红豆',    nameEn: 'Red Bean',
     age: '11 yrs',  ageZh: '11岁',
     gender: 'Female', genderZh: '女生',
@@ -64,7 +64,7 @@ export const cats = [
     tags: ['Independent', '傲娇美人', 'Fierce'],
   },
   {
-    id: 5,
+    id: gaogao,
     name: '高高',    nameEn: 'Gaogao',
     age: '5 yrs',   ageZh: '5岁',
     gender: 'Female', genderZh: '女生',
@@ -80,7 +80,7 @@ export const cats = [
     tags: ['会开门', '水汪汪', 'Clever'],
   },
   {
-    id: 6,
+    id: xixi,
     name: '西西',    nameEn: 'Xixi',
     age: '5 yrs',   ageZh: '5岁',
     gender: 'Female', genderZh: '女生',
@@ -96,7 +96,7 @@ export const cats = [
     tags: ['双胞胎', '软肚子', 'Foodie'],
   },
   {
-    id: 7,
+    id: jiajia,
     name: '珈珈',    nameEn: 'Jiajia',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
@@ -112,7 +112,7 @@ export const cats = [
     tags: ['大胖橘', '医生令减肥', 'No Hiss'],
   },
   {
-    id: 8,
+    id: luoluo,
     name: '珞珞',    nameEn: 'Luoluo',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
@@ -128,7 +128,7 @@ export const cats = [
     tags: ['夜行者', '毒气炸弹', 'Invisible'],
   },
   {
-    id: 9,
+    id: spoon,
     name: '勺子',    nameEn: 'Spoon',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
@@ -141,7 +141,7 @@ export const cats = [
     storyEn:       'The first time I came to feed him, Spoon thought his owners were back. He rushed over and rubbed against me wildly. Then something shifted — a moment of realisation. He slowly backed to the other end of the room and watched me from there. We looked at each other for a while.',
     photo: '/cats/spoon.jpeg',
     accent: '#A0A8BC',
-    tags: ['缅因猫', '外强中软', 'Slow Warm'],
+    tags: ['威武霸气', '外强中软', 'Slow Warm'],
   },
 ]
 
@@ -183,7 +183,7 @@ export const pricing = [
     name:    '短期寄养',
     nameEn:  'Short Stay',
     period:  '1 – 6 nights',
-    price:   '39',
+    price:   '15',
     unit:    '/ night',
     currency:'USD',
     features: [
@@ -198,7 +198,7 @@ export const pricing = [
     name:    '长期寄养',
     nameEn:  'Extended Stay',
     period:  '7+ nights',
-    price:   '32',
+    price:   '10',
     unit:    '/ night',
     currency:'USD',
     badge:   'Best Value',
@@ -216,7 +216,7 @@ export const pricing = [
     name:    '月租套餐',
     nameEn:  'Monthly',
     period:  '30+ nights',
-    price:   '895',
+    price:   'pending',
     unit:    '/ month',
     currency:'USD',
     features: [
