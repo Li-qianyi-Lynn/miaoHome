@@ -5,9 +5,11 @@ import Footer from './components/Footer'
 import Home     from './pages/Home'
 import Cats     from './pages/Cats'
 import CatDetail from './pages/CatDetail'
-import Services from './pages/Services'
-import About    from './pages/About'
-import Contact  from './pages/Contact'
+import Services  from './pages/Services'
+import About     from './pages/About'
+import Contact   from './pages/Contact'
+import Diary     from './pages/Diary'
+import DiaryEntry from './pages/DiaryEntry'
 
 const pageVariants = {
   initial: { opacity: 0, y: 16 },
@@ -40,6 +42,8 @@ export default function App() {
             <Route path="/"          element={<PageWrapper><Home /></PageWrapper>} />
             <Route path="/cats"      element={<PageWrapper><Cats /></PageWrapper>} />
             <Route path="/cats/:id"  element={<PageWrapper><CatDetail /></PageWrapper>} />
+            <Route path="/diary"      element={<PageWrapper><Diary /></PageWrapper>} />
+            <Route path="/diary/:id"  element={<PageWrapper><DiaryEntry /></PageWrapper>} />
             <Route path="/services"  element={<PageWrapper><Services /></PageWrapper>} />
             <Route path="/about"     element={<PageWrapper><About /></PageWrapper>} />
             <Route path="/contact"   element={<PageWrapper><Contact /></PageWrapper>} />

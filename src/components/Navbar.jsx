@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react'
 const links = [
   { to: '/',         label: '首页'   },
   { to: '/cats',     label: '猫咪们' },
+  { to: '/diary',    label: '日记'   },
   { to: '/services', label: '寄养'   },
   { to: '/about',    label: '关于'   },
   { to: '/contact',  label: '联系'   },
