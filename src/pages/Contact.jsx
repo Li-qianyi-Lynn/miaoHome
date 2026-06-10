@@ -7,10 +7,25 @@ const inputCls =
   'focus:outline-none focus:border-rose/50 focus:bg-white transition-all duration-200 placeholder:text-ink-faint'
 
 export default function Contact() {
-  const [form, setSub] = useState({ name: '', contact: '', catName: '', breed: '', duration: '', note: '' })
-  const [done, setDone] = useState(false)
+  const [form, setSub]   = useState({ name: '', contact: '', catName: '', breed: '', duration: '', note: '' })
+  const [done, setDone]   = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
   const onChange = e => setSub(f => ({ ...f, [e.target.name]: e.target.value }))
-  const onSubmit = e => { e.preventDefault(); setDone(true) }
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError(false)
+    try {
+      const res = await fetch('https://formspree.io/f/mdavdwer', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body:    JSON.stringify(form),
+      })
+      if (res.ok) { setDone(true) } else { setError(true) }
+    } catch { setError(true) }
+    finally  { setLoading(false) }
+  }
 
   return (
     <div className="min-h-screen pt-28 pb-24 px-6">
@@ -147,13 +162,21 @@ export default function Contact() {
                     className={inputCls + ' resize-none'} />
                 </div>
 
-                <button type="submit" className="btn-primary justify-center">
-                  Send · 发送
-                  <ArrowRight size={14} />
+                <button type="submit" disabled={loading} className="btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed">
+                  {loading ? '发送中…' : 'Send · 发送'}
+                  {!loading && <ArrowRight size={14} />}
                 </button>
-                <p className="font-sans text-xs text-ink-faint text-center">
-                  I reply within 24 hours · 24小时内回复
-                </p>
+                {error && (
+                  <p className="font-sans text-xs text-center text-rose">
+                    发送失败，请直接发邮件或微信联系我。<br />
+                    <span className="text-ink-faint">Something went wrong — please reach out directly.</span>
+                  </p>
+                )}
+                {!error && (
+                  <p className="font-sans text-xs text-ink-faint text-center">
+                    I reply within 24 hours · 24小时内回复
+                  </p>
+                )}
               </form>
             )}
           </motion.div>
