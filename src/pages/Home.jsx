@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import Hero from '../components/Hero'
+import { Link } from 'react-router-dom'
 import CatCard from '../components/CatCard'
+import Hero from '../components/Hero'
 import { cats } from '../data/cats'
 
 /* Fade-up on scroll */
@@ -33,18 +33,16 @@ export default function Home() {
 
           <motion.div {...fadeUp(0.2)} className="space-y-5 prose-diary text-ink-muted">
             <p>
-              It started simply: a friend was traveling and needed someone to watch their cat.
-              I said yes. The cat was fine. My friend came back. Then another friend asked.
-              Then another.
+              我和喵喵们在西雅图的故事，开始于一次不经意的询问。朋友们需要外出一段时间，问我能不能帮忙照顾弟弟喵——我同意了，然后就开始了我作为猫猫姨姨的旅程。
+              <strong className="text-ink">所以弟弟永远是我心中的嫡长猫！！</strong>
             </p>
             <p>
-              Several years later, I've had a growing number of regular guests — all of them
-              belonging to people I care about. Each one arrived with their own quirks, their own
-              rhythms, their own small demands. This site is a record of all of them.
+              有了第一次的经历，这个朋友又把我介绍给了她的朋友，渐渐地，我照顾过的猫咪越来越多。我的手机里存了好多喵喵们的丑照、上厕所照、可爱照。我和猫猫们，和猫猫的主人们，也有了很多共同的回忆。
             </p>
             <p className="font-sans text-sm text-ink-faint italic">
-              如果你也是朋友的朋友，需要有人照顾你的猫——欢迎联系我。<br />
-              If you're a friend of a friend who needs someone for your cat, feel free to reach out.
+              My Seattle story with cats started with one offhand question: some friends were going away for a while and asked if I could look after Didi. I said yes — and that was the start of my life as a cat auntie. Didi will always be my firstborn cat, in my heart.
+              <br /><br />
+              After that, they introduced me to their friends. Gradually I ended up with more and more cats to look after. My phone is now full of their funny faces, bathroom visits, and best moments. I've made a lot of shared memories — with the cats, and with the people who love them. That's what this site is: a record of all of it.
             </p>
           </motion.div>
 

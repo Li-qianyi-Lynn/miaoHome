@@ -10,7 +10,7 @@ export default function CatCard({ cat, index = 0 }) {
       viewport={{ once: true, margin: '-48px' }}
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
     >
-      <Link to={`/cats/${cat.id}`} className="group block cursor-pointer">
+      <Link to={`/cats/${cat.nameEn.toLowerCase().replace(/\s+/g, '-')}`} className="group block cursor-pointer">
         {/* Photo / placeholder */}
         <div className="relative aspect-[3/4] bg-surface-2 rounded-2xl overflow-hidden mb-4">
           {cat.photo ? (

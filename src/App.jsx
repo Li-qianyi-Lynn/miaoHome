@@ -39,7 +39,7 @@ export default function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/"          element={<PageWrapper><Home /></PageWrapper>} />
             <Route path="/cats"      element={<PageWrapper><Cats /></PageWrapper>} />
-            <Route path="/cats/:id"  element={<PageWrapper><CatDetail /></PageWrapper>} />
+            <Route path="/cats/:slug"  element={<PageWrapper><CatDetail /></PageWrapper>} />
             <Route path="/services"  element={<PageWrapper><Services /></PageWrapper>} />
             <Route path="/about"     element={<PageWrapper><About /></PageWrapper>} />
             <Route path="/contact"   element={<PageWrapper><Contact /></PageWrapper>} />

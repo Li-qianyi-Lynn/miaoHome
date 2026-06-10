@@ -4,9 +4,11 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { cats } from '../data/cats'
 
 export default function CatDetail() {
-  const { id } = useParams()
-  const cat    = cats.find(c => c.id === Number(id))
-  const next   = cats.find(c => c.id === (Number(id) % cats.length) + 1)
+  const { slug } = useParams()
+  const toSlug = (nameEn) => nameEn.toLowerCase().replace(/\s+/g, '-')
+  const idx    = cats.findIndex(c => toSlug(c.nameEn) === slug)
+  const cat    = cats[idx]
+  const next   = cats[(idx + 1) % cats.length]
 
   if (!cat) return (
     <div className="min-h-screen flex items-center justify-center">
@@ -128,7 +130,7 @@ export default function CatDetail() {
             className="mt-20 pt-10 border-t border-surface-3 flex items-center justify-between"
           >
             <p className="label">Next · 下一位</p>
-            <Link to={`/cats/${next.id}`} className="inline-flex items-center gap-3 group cursor-pointer">
+            <Link to={`/cats/${next.nameEn.toLowerCase().replace(/\s+/g, '-')}`} className="inline-flex items-center gap-3 group cursor-pointer">
               <span className="font-serif text-xl text-ink group-hover:text-rose transition-colors">
                 {next.name} · {next.nameEn}
               </span>

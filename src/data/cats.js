@@ -1,6 +1,6 @@
 export const cats = [
   {
-    id: didi,
+    id: 1,
     name: '弟弟',    nameEn: 'Didi',
     age: '3 yrs',   ageZh: '3岁',
     gender: 'Male',   genderZh: '男生',
@@ -16,7 +16,7 @@ export const cats = [
     tags: ['奶牛猫', '白手套', 'Butt Pats'],
   },
   {
-    id: sugar,
+    id: 2,
     name: '鼻嘎',    nameEn: 'Sugar',
     age: '1 yr',    ageZh: '1岁',
     gender: 'Male',   genderZh: '男生',
@@ -32,7 +32,7 @@ export const cats = [
     tags: ['Devon Rex', '小恶霸', 'Energetic'],
   },
   {
-    id: sweet-potato,
+    id: 3,
     name: '地瓜',    nameEn: 'Sweet Potato',
     age: '16 yrs',  ageZh: '16岁',
     gender: 'Female', genderZh: '女生',
@@ -48,7 +48,7 @@ export const cats = [
     tags: ['Senior', '温柔老太太', 'Gentle'],
   },
   {
-    id: red-bean,
+    id: 4,
     name: '红豆',    nameEn: 'Red Bean',
     age: '11 yrs',  ageZh: '11岁',
     gender: 'Female', genderZh: '女生',
@@ -64,7 +64,7 @@ export const cats = [
     tags: ['Independent', '傲娇美人', 'Fierce'],
   },
   {
-    id: gaogao,
+    id: 5,
     name: '高高',    nameEn: 'Gaogao',
     age: '5 yrs',   ageZh: '5岁',
     gender: 'Female', genderZh: '女生',
@@ -80,7 +80,7 @@ export const cats = [
     tags: ['会开门', '水汪汪', 'Clever'],
   },
   {
-    id: xixi,
+    id: 6,
     name: '西西',    nameEn: 'Xixi',
     age: '5 yrs',   ageZh: '5岁',
     gender: 'Female', genderZh: '女生',
@@ -96,7 +96,7 @@ export const cats = [
     tags: ['双胞胎', '软肚子', 'Foodie'],
   },
   {
-    id: jiajia,
+    id: 7,
     name: '珈珈',    nameEn: 'Jiajia',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
@@ -112,7 +112,7 @@ export const cats = [
     tags: ['大胖橘', '医生令减肥', 'No Hiss'],
   },
   {
-    id: luoluo,
+    id: 8,
     name: '珞珞',    nameEn: 'Luoluo',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
@@ -128,7 +128,7 @@ export const cats = [
     tags: ['夜行者', '毒气炸弹', 'Invisible'],
   },
   {
-    id: spoon,
+    id: 9,
     name: '勺子',    nameEn: 'Spoon',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
