@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { cats } from '../data/cats'
+import { computeAge } from '../utils/catAge'
 
 export default function CatDetail() {
   const { slug } = useParams()
@@ -91,11 +92,17 @@ export default function CatDetail() {
 
             {/* Meta grid */}
             <div className="grid grid-cols-2 gap-3 mb-8">
-              {[
-                { l: 'Gender · 性别', v: `${cat.genderZh} / ${cat.gender}` },
-                { l: 'Age · 年龄',    v: cat.ageZh ? `${cat.ageZh} / ${cat.age}` : '—' },
-                { l: 'Breed · 品种',  v: `${cat.breedZh}` },
-              ].map(({ l, v }) => (
+              {(() => {
+                const { age, ageZh, birthdayDisplay, birthdayDisplayZh } = computeAge(cat.birthday);
+                const displayAge   = ageZh   ?? cat.ageZh;
+                const displayAgeEn = age     ?? cat.age;
+                return [
+                  { l: 'Gender · 性别',   v: `${cat.genderZh} / ${cat.gender}` },
+                  { l: 'Age · 年龄',      v: displayAge ? `${displayAge} / ${displayAgeEn}` : '—' },
+                  { l: 'Breed · 品种',    v: `${cat.breedZh}` },
+                  ...(birthdayDisplayZh ? [{ l: 'Birthday · 生日', v: `${birthdayDisplayZh} / ${birthdayDisplay}` }] : []),
+                ];
+              })().map(({ l, v }) => (
                 <div key={l} className="p-3 bg-surface-2 rounded-xl">
                   <p className="label mb-1">{l}</p>
                   <p className="font-sans text-sm text-ink">{v}</p>

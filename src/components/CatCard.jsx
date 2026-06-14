@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
+import { computeAge } from '../utils/catAge'
 
 export default function CatCard({ cat, index = 0 }) {
+  const { ageZh: computedAgeZh } = computeAge(cat.birthday);
+  const displayAgeZh = computedAgeZh ?? cat.ageZh;
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -55,7 +58,7 @@ export default function CatCard({ cat, index = 0 }) {
             <span className="font-sans text-sm text-ink-faint">{cat.nameEn}</span>
           </div>
           <p className="font-sans text-sm text-ink-muted mb-2">
-            {cat.breedZh} · {cat.breed} · {cat.ageZh}
+            {cat.breedZh} · {cat.breed} · {displayAgeZh}
           </p>
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5">

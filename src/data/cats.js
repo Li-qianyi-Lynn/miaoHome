@@ -39,7 +39,7 @@ export const cats = [
     breed: 'Long-haired', breedZh: '长毛猫',
     personality:   ['慵懒', '温柔', '爱晒太阳'],
     personalityEn: ['Lazy', 'Gentle', 'Sun-lover'],
-    description:   '地瓜是一只16岁的老太太，有肾病，需要每天喂药，牙口不好所以吃软食。她最爱晒太阳，是全家最温柔的猫。 2026年，她去往喵星旅游啦。',
+    description:   '地瓜是一只16岁的老太太，有肾病，需要每天喂药，牙口不好所以吃软食。她最爱晒太阳，是全家最温柔的猫。 2025年，她去往喵星旅游啦。',
     descriptionEn: 'Sweet Potato is 16 years old and the most gentle cat in the house. She has kidney disease and needs daily meds, soft food only — I blend everything. She spends her days sunbathing. 2026, she went to the cat star.',
     story: '照顾地瓜的那段时间，每天早上都要先做一件事：把她的食物用料理机打成泥，再加上药。她从来不拒绝，乖乖等着。我觉得她懂。',
     storyEn:  'Every morning I\'d blend her food soft and mix in her medication. She always waited patiently. I think she understood something about being taken care of.',
@@ -98,6 +98,7 @@ export const cats = [
   {
     id: 7,
     name: '珈珈',    nameEn: 'Jiajia',
+    birthday: '2023-10',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
     breed: 'Orange Tabby', breedZh: '大胖橘猫',
@@ -114,6 +115,7 @@ export const cats = [
   {
     id: 8,
     name: '珞珞',    nameEn: 'Luoluo',
+    birthday: '2023-10',
     age: null,       ageZh: null,
     gender: 'Male',   genderZh: '男生',
     breed: 'Black Cat', breedZh: '小黑猫',
@@ -142,6 +144,23 @@ export const cats = [
     photo: '/cats/spoon.jpeg',
     accent: '#A0A8BC',
     tags: ['威武霸气', '外强中软', 'Slow Warm'],
+  },
+  {
+    id: 10,
+    name: 'Alan & Alex',    nameEn: 'Alan & Alex',
+    birthday: null,
+    age: null,       ageZh: null,
+    gender: 'Male',   genderZh: '男生',
+    breed: '', breedZh: '',
+    personality:   ['粘人', '咪菜瘾大', '贪吃'],
+    personalityEn: ['Affectionate', 'Foodie', 'Bottomless pit'],
+    description:   '双胞胎兄弟，两只公公猫。长得一模一样，我经常分不清。Alex更亲人，会主动凑过来蹭你；Alan稳一些，等你靠近。2025年第一次见到他们，脑海里只浮现出四个字：两辆皮卡。为了健康着想，强制减肥，戒了猫罐头只吃干粮，现在身材正常多了——但还是很大只。',
+    descriptionEn: 'Twin brothers, both neutered males. Identical — I cannot tell them apart. Allegedly Alex is the friendlier one, coming to you first; Alan waits for you to come to him. When I first met them in 2025, one thought: two pickup trucks. They\'ve since been put on a strict dry-food-only diet. They\'re now a normal size. A large normal.',
+    story:         '我曾经认真研究过怎么分辨他们，最后的结论是：谁先过来蹭我，那个就是Alex。这个方法大概有九成准确率。',
+    storyEn:       'I once tried hard to tell them apart. My conclusion: whichever one walks over first is probably Alex. This method is about 90% accurate.',
+    photo: '/cats/alan-alex.jpeg',
+    accent: '#9DAAB8',
+    tags: ['双胞胎', '大只', '戒罐头'],
   },
 ]
 
