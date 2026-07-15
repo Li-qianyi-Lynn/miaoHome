@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { ArrowRight, Check } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import CalendarWidget from '../components/CalendarWidget'
 
 const fadeUp = (delay = 0) => ({
   initial:    { opacity: 0, y: 20 },
@@ -58,10 +59,56 @@ export default function Services() {
     <div className="min-h-screen pt-28 pb-24 px-6">
       <div className="max-w-6xl mx-auto">
 
-        {/* Header */}
+        {/* Booking calendar — two-column */}
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
+          {/* Left: text */}
+          <div>
+            <p className="label mb-4">When I&rsquo;m booked · 近期入住</p>
+            <h2 className="font-serif text-4xl sm:text-5xl font-semibold text-ink leading-tight mb-6">
+              Availability
+            </h2>
+            <p className="font-serif italic text-ink-muted text-lg leading-relaxed mb-4">
+              这是我实际的日历，粉色标注的日期已有猫咪入住。
+            </p>
+            <ul className="flex flex-col gap-3 mb-6">
+              {[
+                '独享 VIP 尊贵服务',
+                '人类全天陪玩',
+                '客厅卧室自由探索',
+                '1 vs 1 悉心照料',
+              ].map(item => (
+                <li key={item} className="flex items-center gap-3">
+                  <span className="text-rose text-base leading-none">🐾</span>
+                  <span className="font-sans text-sm text-ink-muted">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="font-sans text-xs text-ink-faint italic mb-8">
+              Highlighted dates are already hosting guests.
+              Reach out to check on open dates.
+            </p>
+            <Link to="/contact" className="btn-primary self-start text-sm">
+              我要预约 · Book a stay
+              <ArrowRight size={14} aria-hidden="true" />
+            </Link>
+          </div>
+
+          {/* Right: calendar */}
+          <div>
+            <CalendarWidget />
+          </div>
+        </motion.div>
+
+        {/* Header + intro */}
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="mb-16 border-b border-surface-3 pb-12"
         >
