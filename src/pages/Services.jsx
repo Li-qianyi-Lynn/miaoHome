@@ -169,7 +169,7 @@ export default function Services() {
           <div className="bg-surface p-8 sm:p-10">
             <p className="label mb-4">Pricing · 价格</p>
             <div className="flex items-baseline gap-2 mb-3">
-              <span className="font-serif text-5xl font-semibold text-ink">$15</span>
+              <span className="font-serif text-5xl font-semibold text-ink">$25</span>
               <span className="font-sans text-sm text-ink-faint">/ day or visit · 每天/每次起</span>
             </div>
             <p className="font-sans text-sm text-ink-muted leading-relaxed">
