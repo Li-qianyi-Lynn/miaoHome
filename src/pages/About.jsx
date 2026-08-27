@@ -14,7 +14,7 @@ const fadeUp = (delay = 0) => ({
 const photos = [
   { src: '/about/lynn-sunset.jpeg',    alt: 'Lynn at golden hour',               pos: 'object-top'    },
   { src: '/about/lynn-tulips.jpeg',    alt: 'Lynn in the tulip fields',           pos: 'object-center' },
-  { src: '/about/lynn-seattle.jpg',    alt: 'Lynn at the Seattle waterfront',     pos: 'object-top'    },
+  { src: '/about/benben.jpeg',          alt: 'Bentley the skinny orange cat',      pos: 'object-top'    },
   { src: '/about/lynn-waterfront.jpeg',alt: 'Lynn by the lake at dusk',           pos: 'object-center' },
   { src: '/about/landlord-cat.jpeg',  alt: 'The first cat i cared: didi',pos: 'object-center'},
   { src: '/about/lynn-snow.jpg',       alt: 'Lynn in the snow',                  pos: 'object-center' },

@@ -162,6 +162,23 @@ export const cats = [
     accent: '#9DAAB8',
     tags: ['双胞胎', '大只', '戒罐头'],
   },
+  {
+    id: 11,
+    name: '本特利',    nameEn: 'Bentley',
+    birthday: null,
+    age: '5 yrs',    ageZh: '5岁',
+    gender: 'Male',   genderZh: '男生',
+    breed: 'Orange Tabby', breedZh: '大橘',
+    personality:   ['超爱睡觉', '随便摸', '胆小怕狗'],
+    personalityEn: ['Sleepyhead', 'Loves being petted', 'Timid around dogs'],
+    description:   'Bentley是一只神奇的大橘——怎么吃都不胖。小公公猫，脸小身子瘦，完全不符合"十橘九胖"的定律。非常亲人，随便摸，怎么撸都行，但胆子特别小，尤其讨厌狗的气味。他的妈妈一度很担心他太瘦，以为身体出了问题，跑了好多趟医院检查，最后医生的结论是：可能就是基因问题，天生吃不胖。一只打破橘猫定律的大橘。',
+    descriptionEn: 'Bentley is a neutered orange tabby who defies the "all orange cats are fat" stereotype. Thin, small-faced, and stays skinny no matter how much he eats. Super affectionate — he\'ll let anyone pet him however they want — but he\'s quite timid and absolutely hates the smell of dogs. His previous mom was so worried about his weight that she took him to the vet multiple times, convinced something was wrong. The verdict: probably just genetics. A naturally skinny orange cat — a rare specimen indeed.',
+    story:         'Bentley刚来我家的时候，一头钻进床底就不肯出来，什么都不吃，连最爱的罐罐都不碰。我把他的猫包打开放在床边，过了一阵子，他可能闻到了熟悉的气味，鬼鬼祟祟地从床底探出头来，小心翼翼地爬进了猫包里，躺了下来。又过了几个小时，他开始吃猫粮了。从陌生到熟悉，Bentley只花了半天。',
+    storyEn:       'When Bentley first arrived, he dove straight under the bed and refused to come out. Wouldn\'t eat anything — not even his favorite canned food. I opened his carrier and placed it by the bed. After a while, maybe catching a familiar scent, he crept out from underneath, tiptoed over, and curled up inside his carrier. A few hours later, he started eating kibble. From terrified to at home — it took Bentley half a day.',
+    photo: '/cats/bentley.jpeg',
+    accent: '#E8A860',
+    tags: ['吃不胖的大橘', '瞌睡虫', 'Skinny Orange'],
+  },
 ]
 
 export const services = [
